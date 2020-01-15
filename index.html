@@ -24,17 +24,17 @@
 	<script>
 	var stratData = {
 		seq:[
-			{"name":"layer1","height":"36", "type":"627"},
-      {"name":"layer2","height":"136", "type":"633"},
-      {"name":"layer3","height":"100", "type":"624"},
-      {"name":"layer4","height":"70", "type":"619"}
+			{"name":"layer1","height":"36", "type":"627", "color":"blue"},
+      {"name":"layer2","height":"136", "type":"633", "color":"green"},
+      {"name":"layer3","height":"100", "type":"624", "color":"yellow"},
+      {"name":"layer4","height":"70", "type":"619", "color":"gray"}
 		]
 	}
 	$(document).ready(function(){
 		var returnHTML = [];
     for(var i = 0; i < stratData.seq.length; i++){
       console.log(stratData.seq[i].name);
-      returnHTML.push("<div class='layer' style='background-image: url(svg/"+stratData.seq[i].type+".svg); height:"+stratData.seq[i].height+"px;'></div>");
+      returnHTML.push("<div class='layer' style='background-image: url(svg/"+stratData.seq[i].type+".svg); height:"+stratData.seq[i].height+"px; background-color: "+stratData.seq[i].color+";'></div>");
     }
     $("#loadStrat").html(returnHTML.join("\n"));
 	});
