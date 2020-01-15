@@ -6,15 +6,38 @@
   <title>Testing Strat</title>
   <style>
     body { margin: 0; }
+    .layer { background-size: 140px 140px; }
   </style>
 </head>
 <body>
   <main>
-    <div style="background-image: url(svg/627.svg); background-size: 140px 140px; height:50px; background-color: aquamarine;"></div>
-    <div style="background-image: url(svg/623.svg); background-size: 140px 140px; height:150px; background-color: yellow;"></div>
-    <div style="background-image: url(svg/607.svg); background-size: 140px 140px; height:70px; background-color: lightblue;"></div>
-    <div style="background-image: url(svg/638.svg); background-size: 140px 140px; height:90px; background-color: pink;"></div>
-    <div style="background-image: url(svg/616.svg); background-size: 140px 140px; height:50px; background-color: moccasin;"></div>
+    <h2>Sample Data</h2>
+    <div class="layer" style="background-image: url(svg/627.svg); height:50px; background-color: aquamarine;"></div>
+    <div class="layer" style="background-image: url(svg/623.svg); height:150px; background-color: yellow;"></div>
+    <div class="layer" style="background-image: url(svg/607.svg); height:70px; background-color: lightblue;"></div>
+    <div class="layer" style="background-image: url(svg/638.svg); height:90px; background-color: pink;"></div>
+    <div class="layer" style="background-image: url(svg/616.svg); height:50px; background-color: moccasin;"></div>
   </main>
+  <h2>Generated Data</h2>
+  <section id="loadStrat"></section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+	var stratData = {
+		seq:[
+			{"name":"layer1","height":"36", "type":"627"},
+      {"name":"layer2","height":"136", "type":"633"},
+      {"name":"layer3","height":"100", "type":"624"},
+      {"name":"layer4","height":"70", "type":"619"}
+		]
+	}
+	$(document).ready(function(){
+		var returnHTML = [];
+    for(var i = 0; i < stratData.seq.length; i++){
+      console.log(stratData.seq[i].name);
+      returnHTML.push("<div class='layer' style='background-image: url(svg/"+stratData.seq[i].type+".svg); height:"+stratData.seq[i].height+"px;'></div>");
+    }
+    $("#loadStrat").html(returnHTML.join("\n"));
+	});
+	</script>
 </body>
 </html>
