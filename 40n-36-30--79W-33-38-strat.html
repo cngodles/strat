@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Testing Strat</title>
+  <style>
+    body { margin: 0; }
+    .layer { background-size: 140px 140px; }
+  </style>
+</head>
+<body>
+  <h2>Generated Data</h2>
+  <main>
+  <section id="loadStrat"></section>
+  </main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+	var stratData = {
+		seq:[
+			{"name":"layer1","height":"240", "type":"619", "color":"blue"},
+      {"name":"layer1","height":"24", "type":"619", "color":"gray"},
+      {"name":"layer1","height":"12", "type":"619", "color":"yellow"},
+      {"name":"layer1","height":"8", "type":"619", "color":"blue"},
+      {"name":"layer2","height":"3", "type":"627", "color":"green"},
+      {"name":"layer3","height":"16", "type":"619", "color":"yellow"},
+      {"name":"layer3","height":"3", "type":"619", "color":"yellow"},
+      {"name":"layer3","height":"6", "type":"627", "color":"green"},
+      {"name":"layer3","height":"87", "type":"619", "color":"yellow"},
+      {"name":"layer3","height":"1", "type":"658", "color":"gray"},
+      
+      {"name":"layer3","height":"102", "type":"608", "color":"yellow"},
+      
+      {"name":"layer3","height":"105", "type":"620", "color":"green"},
+      {"name":"layer3","height":"177", "type":"619", "color":"yellow"},
+      
+      {"name":"layer3","height":"2", "type":"620", "color":"blue"},
+      {"name":"layer3","height":"18", "type":"620", "color":"green"},
+      {"name":"layer3","height":"14", "type":"627", "color":"yellow"},
+      {"name":"layer3","height":"58", "type":"620", "color":"gray"},
+      {"name":"layer3","height":"28", "type":"620", "color":"green"},
+      {"name":"layer3","height":"9", "type":"619", "color":"yellow"},
+      
+      {"name":"layer3","height":"30", "type":"620", "color":"gray"},
+      {"name":"layer3","height":"318", "type":"607", "color":"green"},
+      {"name":"layer3","height":"230", "type":"619", "color":"yellow"},
+      {"name":"layer3","height":"3", "type":"619", "color":"green"},
+      {"name":"Coal","height":"35", "type":"658", "color":"gray"}
+		]
+	}
+	$(document).ready(function(){
+		var returnHTML = [];
+    for(var i = 0; i < stratData.seq.length; i++){
+      console.log(stratData.seq[i].name);
+      returnHTML.push("<div class='layer' style='background-image: url(svg/"+stratData.seq[i].type+".svg); height:"+stratData.seq[i].height+"px; background-color: "+stratData.seq[i].color+";'></div>");
+    }
+    $("#loadStrat").html(returnHTML.join("\n"));
+	});
+	</script>
+</body>
+</html>
