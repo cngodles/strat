@@ -4,7 +4,7 @@ An attempt to show stratigraphy information using HTML/CSS with JSON data. The c
 
 ## Demo pages
 
-* https://cngodles.github.io/strat/ General Demo
+* https://cngodles.github.io/strat/ General Demo.
 * https://cngodles.github.io/strat/40n-36-30--79W-33-38-strat.html Sample from a specific locality.
 
 ## Stratigraphy Patterns from the USGS
