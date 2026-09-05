@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Testing Strat</title>
-  <style>
-    body { margin: 0; }
-    .layer { background-size: 140px 140px; }
-  </style>
+  <link rel="stylesheet" href="css/strat.css">
 </head>
 <body>
   <h2>Generated Data</h2>
   <main>
   <section id="loadStrat"></section>
   </main>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+		integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh"
+		crossorigin="anonymous" defer></script>
+	<script src="js/strat.js" defer></script>
+	<script type="module">
 	var stratData = {
 		seq:[
 			{"name":"layer1","height":"240", "type":"619", "color":"blue"},
@@ -49,12 +49,7 @@
 		]
 	}
 	$(document).ready(function(){
-		var returnHTML = [];
-    for(var i = 0; i < stratData.seq.length; i++){
-      console.log(stratData.seq[i].name);
-      returnHTML.push("<div class='layer' style='background-image: url(svg/"+stratData.seq[i].type+".svg); height:"+stratData.seq[i].height+"px; background-color: "+stratData.seq[i].color+";'></div>");
-    }
-    $("#loadStrat").html(returnHTML.join("\n"));
+		Strat.renderStratColumn(document.getElementById("loadStrat"), stratData);
 	});
 	</script>
 </body>
